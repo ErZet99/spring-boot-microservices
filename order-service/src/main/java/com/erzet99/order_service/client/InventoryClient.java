@@ -11,11 +11,9 @@ public class InventoryClient {
     }
 
     public boolean isInStock(String skuCode, Integer quantity) {
-        boolean result = restClient.get()
-                .uri(uriBase + "/api/inventory")
+        return restClient.get()
+                .uri(uriBase + "/api/inventory?skuCode={skuCode}&quantity={quantity}", skuCode, quantity)
                 .retrieve()
                 .body(Boolean.class);
-
-        return result;
     }
 }
