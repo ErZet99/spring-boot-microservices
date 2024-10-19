@@ -35,7 +35,7 @@ class OrderServiceApplicationTests {
 	void shouldSubmitOrder() {
 		String submitOrderJson = """
 			{
-				"skuCode": "Iphone 13",
+				"skuCode": "iphone_13",
 				"price": 1000,
 				"quantity": 2
 			}
