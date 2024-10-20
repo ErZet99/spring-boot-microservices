@@ -1,12 +1,14 @@
 package com.erzet99.order_service.client;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
+@Component
 public class InventoryClient {
     private final RestClient restClient;
-    String uriBase = "http://localhost:8082/api/inventory";
 
-    public InventoryClient() {
+    public InventoryClient(@Value("${inventory.url}/api/inventory") String uriBase) {
         this.restClient = RestClient.builder()
                 .baseUrl(uriBase)
                 .build();

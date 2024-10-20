@@ -14,9 +14,9 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final InventoryClient inventoryClient;
 
-    public OrderService(OrderRepository orderRepository) {
+    public OrderService(OrderRepository orderRepository, InventoryClient inventoryClient) {
         this.orderRepository = orderRepository;
-        this.inventoryClient = new InventoryClient();
+        this.inventoryClient = inventoryClient;
     }
 
     public void placeOrder(OrderRequest orderRequest) {
